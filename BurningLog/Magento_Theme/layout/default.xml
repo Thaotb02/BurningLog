@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="store_switcher" remove="true"/>
+        <referenceBlock name="register-link" remove="true" />
+        <move element="copyright" destination="footer-copyright" after="footer"/>
+        <move element="footer-content-top" destination="footer-container" before="footer"/>
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header-top" template="Magento_Theme::header-top.phtml" />
+
+        </referenceContainer>
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="footer-content-top" template="Magento_Theme::footer-top.phtml" />
+
+            <referenceContainer name="footer">
+                <block class="Magento\Framework\View\Element\Template" name="footer-cate" template="Magento_Theme::footer.phtml" />
+            </referenceContainer>
+
+            <container name="footer-copyright" as="footer-copyright" label="Page Footer" htmlTag="div" htmlClass="footer bottom">
+                <block class="Magento\Framework\View\Element\Template" name="footer-bottom" template="Magento_Theme::footer-bottom.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>

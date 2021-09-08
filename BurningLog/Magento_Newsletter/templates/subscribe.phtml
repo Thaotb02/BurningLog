@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="block newsletter">
+    <div class="title"><h3><?= $block->escapeHtml(__('Newsletter')) ?></h3> <p> Subscribe to our newsletter for the latest </br> news and updates</p></div>
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="newsletter">
+                        <span class="label">
+                            <?= $block->escapeHtml(__('Haha:')) ?>
+                        </span>
+                        <input name="email" type="email" id="newsletter"
+                               placeholder="<?= $block->escapeHtmlAttr(__('Enter your email address')) ?>"
+                               data-mage-init='{"mage/trim-input":{}}'
+                               data-validate="{required:true, 'validate-email':true}"
+                        />
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="buttom-subscribe"
+                        title="<?= $block->escapeHtmlAttr(__('')) ?>"
+                        type="submit"
+                        aria-label="Gui">
+                    <span><?= $block->escapeHtml(__('')) ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="list-icon">
+           <ul>
+        <li class="item-icon"><a href="" class="link-icon"><span><i class="fab fa-facebook-f"></i></span></a></li>
+        <li class="item-icon"><a href="" class="link-icon"><span><i class="fab fa-instagram"></i></span></a></li>
+        <li class="item-icon"><a href="" class="link-icon"><span><i class="fab fa-twitter"></i></span></a></li>
+        <li class="item-icon"><a href="" class="link-icon"><span><i class="fab fa-youtube"></i></span></a></li>
+        <li class="item-icon"><a href="" class="link-icon"><span><i class="fab fa-pinterest"></i></span></a></li>
+    </ul>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+
+<div class="footer-desktop-categories">
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_categories')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="footer-desktop-why">
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_why_burning_log')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="footer-desktop-policies">
+    <?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_ours_policies')
+        ->toHtml();
+    ?>
+</div>
+
+<script>
+require(['jquery','accordion'], function ($)
+ {
+    if ($(window).width() < 767) {
+      $(".footer-desktop-why").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+      $(".footer-desktop-policies").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+      $(".footer-desktop-categories").accordion({
+         "openedState": "active",
+         "collapsible": true,
+         "active": [2],
+         "multipleCollapsible": true,
+         "animate":{
+            timing:"ease-out",
+            duration:"500"
+         }
+      });
+
+    }
+
+ });
+</script>

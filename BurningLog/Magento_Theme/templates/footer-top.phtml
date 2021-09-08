@@ -1,0 +1,28 @@
+<div class="footer top">
+<div class="footer-brand">
+<?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_brand')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="footer-banner">
+<?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_banner')
+        ->toHtml();
+    ?>
+</div>
+
+<div class="footer-service">
+<?php
+    echo $block->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer_service')
+        ->toHtml();
+    ?>
+</div>
+</div>
