@@ -98,7 +98,7 @@
     .lib-css(vertical-align, @_vertical-align);
 
     &:disabled {
-        ._lib-form-element-add-opacity(@_disabled-opacity);
+        ._lib-form-element-add-opacity(@__disabled-opacity);
     }
 }
 
@@ -177,7 +177,7 @@
 ) {
     &.mage-error {
         .lib-form-element-color(
-            @_border-color: @_element-border-color-error,
+            @_border-color: @color-red-validate,
             @_background: @_element-background-error,
             @_color: @_element-color-error
         );
@@ -274,6 +274,19 @@
     input[type="datetime"],
     input[type="email"] {
         .lib-form-element-input(@_type: input-text);
+        .lib-css(box-sizing, border-box);
+        .lib-css(font-size, @font-size13);
+        .lib-css(line-height, @size-30px);
+        .lib-css(color, @color-333);
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(text-align, left);
+        .lib-css(padding, 0 @font-size13);
+        .lib-css(height, 40px);
+
+        &:not([disabled]):focus,
+        &:focus {
+            .lib-css(box-shadow, none);
+        }
     }
 
     input[type="number"] {
@@ -282,10 +295,26 @@
 
     input[type="search"] {
         .lib-form-element-search-reset();
+        .lib-css(box-sizing, border-box);
+        .lib-css(font-size, @font-size13);
+        .lib-css(line-height, @size-30px);
+        .lib-css(color, @color-333);
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(text-align, left);
+        .lib-css(padding, 0 @font-size13);
+        .lib-css(height, 40px);
     }
 
     select {
         .lib-form-element-input(@_type: select);
+        .lib-css(box-sizing, border-box);
+        .lib-css(font-size, @font-size13);
+        .lib-css(line-height, @size-30px);
+        .lib-css(color, @color-333);
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(text-align, left);
+        .lib-css(padding, 0 @font-size13);
+        .lib-css(height, 40px);
     }
 
     select[multiple] {
@@ -300,12 +329,162 @@
 
     input[type="checkbox"] {
         .lib-form-element-choice(@_type: input-checkbox);
-        position: relative;
+        position: absolute;
         top: 2px;
+        opacity: 0;
+        & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+          }
+        
+          // Box.
+          & + label:before {
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            .lib-css(background-color,@color-white);
+            .lib-css(border,@size-1px solid @color-ddd);
+          }
+        
+          &:checked + label:before {
+              .lib-css(background-color,@color-white);
+          }
+          
+      
+          &:disabled + label {
+              .lib-css(background-color,@color-white);
+              cursor: auto;
+          }
+        
+          &:disabled + label:before {
+            box-shadow: none;
+            .lib-css(background-color,@color-white);
+          }
+        
+          &:checked + label:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            background: @background__input-checked;
+            width: 2px;
+            height: 2px;
+            box-shadow: 
+              2px 0 0 @background__input-checked,
+              4px 0 0 @background__input-checked,
+              4px -2px 0 @background__input-checked,
+              4px -4px 0 @background__input-checked,
+              4px -6px 0 @background__input-checked,
+              4px -8px 0 @background__input-checked;
+            transform: rotate(45deg);
+          }
+      
+          &:disabled + label:after {
+              content: '';
+              position: absolute;
+              left: 5px;
+              top: 9px;
+              background: @color-white;
+              width: 2px;
+              height: 2px;
+              box-shadow: 
+                2px 0 0 @color-white,
+                4px 0 0 @color-white,
+                4px -2px 0 @color-white,
+                4px -4px 0 @color-white,
+                4px -6px 0 @color-white,
+                4px -8px 0 @color-white;
+              transform: rotate(45deg);
+            }
+      
+            &:disabled + label:after{
+              content: '';
+              position: absolute;
+              left: 5px;
+              top: 9px;
+              background: @color-ccc;
+              width: 2px;
+              height: 2px;
+              box-shadow: 
+                2px 0 0 @color-ccc,
+                4px 0 0 @color-ccc,
+                4px -2px 0 @color-ccc,
+                4px -4px 0 @color-ccc,
+                4px -6px 0 @color-ccc,
+                4px -8px 0 @color-ccc;
+              transform: rotate(45deg);
+            }
+
     }
+
+    
 
     input[type="radio"] {
         .lib-form-element-choice(@_type: input-radio);
+        position: absolute;
+        opacity: 0; 
+        & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+          }
+        
+          // Box.
+          & + label:before {
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            .lib-css(border-radius,50%);
+               .lib-css(background-color,@color-white);
+         .lib-css(border,@size-1px solid @color-ddd);
+          }
+        
+          &:checked + label:before {
+              .lib-css(background-color,@color-white);
+          }
+          
+      
+          &:disabled + label {
+              .lib-css(background-color,@color-white);
+              cursor: auto;
+          }
+        
+          &:disabled + label:before {
+            box-shadow: none;
+            .lib-css(background-color,@color-white);
+          }
+        
+          &:checked + label:after {
+              content: '';
+              width: 10px;
+              height: 10px;
+              background: @background__input-checked;
+              position: absolute;
+              top: 6px;
+              left: 6px;
+              border-radius: 100%;
+              -webkit-transition: all 0.2s ease;
+              transition: all 0.2s ease;
+          }
+            &.ticked-disabled + label:after{
+              width: 10px;
+              height: 10px;
+              background: @color-ccc;
+              position: absolute;
+              top: 6px;
+              left: 6px;
+              border-radius: 100%;
+              -webkit-transition: all 0.2s ease;
+              transition: all 0.2s ease;
+            }
+
     }
 
     input,
@@ -313,9 +492,13 @@
     textarea {
         .lib-form-validation();
     }
+    div.mage-error{
+        color: @color-mage_error;
+    }
 
     div.mage-error[generated] {
         .lib-form-validation-note();
+       
     }
 
     input[type="button"],
@@ -894,7 +1077,7 @@
     @_type-block-label-margin: @form-field-type-label-block__margin,
     @_type-block-label-padding: @form-field-type-label-block__padding,
     @_type-block-label-align: @form-field-type-label-block__align
-) when (@_type = block) and not (@_type = false) {
+)when(@_type = block) and not(@_type = false) {
     &:not(.choice) {
         > .label {
             box-sizing: content-box;

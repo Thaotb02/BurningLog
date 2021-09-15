@@ -61,11 +61,7 @@
             </block>
         </referenceBlock>
 
-        <!-- <referenceContainer name="content">
-            <container name="product.list" htmlTag="div" htmlClass="product list">
-                <block class="Magento\Framework\View\Element\Template" name="product.list.a" template="Magento_Catalog::product-list.phtml" />
-            </container>
-        </referenceContainer> -->
+   
 
 
     </body>

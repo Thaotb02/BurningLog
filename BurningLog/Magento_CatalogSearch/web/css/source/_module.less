@@ -69,7 +69,7 @@
         }
 
         .action.search {
-            display: none;
+            display: block;
         }
 
         .control {
@@ -217,6 +217,47 @@
     .block-search {
         margin-top: @indent__s;
     }
+    .block-search .control{
+        border: none;
+        input {
+            border: 2px solid #bbbbbb;
+            position: static;
+        }
+    }
+    .block-search .label,.text {
+        display: none;
+    }
+    .block-search .action.search {
+            background     : none;
+            border         : 0;
+            box-shadow     : none;
+            line-height    : inherit;
+            margin         : 0;
+            padding        : 0;
+            text-decoration: none;
+            text-shadow    : none;
+            font-weight    : 400;
+            position       : absolute;
+            right          : 30px;
+            top: 38px;
+            z-index        : 1;
+    
+            &:before {
+                font-size     : 16px;
+                line-height   : 32px;
+                content       : '\e615';
+                font-family   : 'icons-blank-theme';
+                margin        : 0;
+                vertical-align: top;
+                display       : inline-block;
+                font-weight   : normal;
+                overflow      : hidden;
+                speak         : none;
+                text-align    : center;
+                color         : @color-black;
+            }
+        }
+
 }
 
 //

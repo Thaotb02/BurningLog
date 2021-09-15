@@ -60,6 +60,53 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                        tabindex="-1">
                         <?= $productImage->toHtml() ?>
                     </a>
+
+               
+
+                                <!-- Sale or PreOrder -->
+                                <?php
+                                $saleOrPreorder = $_product->getResource()->getAttribute('sale_pre_order');
+                                $saleOrPreorder = $saleOrPreorder->getFrontend()->getValue($_product);
+                                if (empty($saleOrPreorder)) {
+                                } else {
+                                    if ($saleOrPreorder === 'Pre Order'){
+                                        $class = "label-attribute preorder-text";
+                                    }elseif($saleOrPreorder === 'Sale'){
+                                        $class = "label-attribute sale-text";
+                                    }
+                                    echo "<span class='$class' > $saleOrPreorder </span>";
+                                }
+
+                                ?>
+                                       <!-- brand_burning_log -->
+                                       <?php
+                                $brand_burning_log = $_product->getResource()->getAttribute('brand');
+                                $brand_burning_log = $brand_burning_log->getFrontend()->getValue($_product);
+                                if (empty($brand_burning_log)) {
+                                    echo "<p></p>";
+                                } else {
+                                    $en_code = htmlspecialchars($brand_burning_log);
+                                    $en_code = explode("&quot;", $brand_burning_log)[1];
+                                    $srcImg = $block->getBaseUrl() . "pub/media/" . $en_code;
+                                    echo "<img class=brand src=$srcImg />";
+                                }
+                     
+                                ?>
+
+                                  <!-- moreColourAvailable -->
+                                  <?php
+                                $moreColoursAvailable = $_product->getResource()->getAttribute('colour_avaliable');
+                                $moreColoursAvailable = $moreColoursAvailable->getFrontend()->getValue($_product);
+                                $class = "colour-avaliable";
+                                echo "<p class= $class > $moreColoursAvailable </p>";
+                                ?>
+
+                              
+
+
+
+
+
                     <div class="product details product-item-details">
                         <?php
                             $_productNameStripped = $block->stripTags($_product->getName(), null, true);

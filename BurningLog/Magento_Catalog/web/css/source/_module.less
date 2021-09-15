@@ -5,7 +5,7 @@
 
 @import 'module/_listings.less';
 @import 'module/_toolbar.less';
-@import 'module/_tabs.less';
+@import '_extend.less';
 
 //
 //  Variables
@@ -21,10 +21,58 @@
 
 & when (@media-common = true) {
 
+//
+//  Banner Category Page
+//  _____________________________________________
+
+    .main-banner-category{
+        margin-bottom: 20px;
+    }
+    .cate-banner-content {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        .img-banner{
+            justify-content: end;
+            align-items: flex-end;
+        }
+    }
+
+    .cate-banner-title {
+        font-family: @font-sunvalley;
+        font-size  : 72px;
+        line-height: 42px;
+        color      : @color-white;
+    }
+
+    .cate-banner-text {
+        font-size  : 15px;
+        line-height: 22px;
+        color      : @color-white;
+        max-width: 500px;
+    }
+
+    .field.qty {
+        display: none;
+    }
+
+    .fotorama__nav-wrap--horizontal{
+        margin: 20px 0;
+    }
+    
+    .fotorama__thumb {
+        background-color: @color-white  !important;
+    }
+
+    .fotorama__thumb-border {
+        border          : 1px solid @color-ddd  !important;
+        background-image: none !important;
+    }
+
     //  Category view
     .old-price,
     .old.price {
-        .lib-css(color, @product-price__muted__color);
+        .lib-css(color, @color-old-price);
     }
 
     .prices-tier {
@@ -154,7 +202,7 @@
 
     .product.info.detailed {
         clear: both;
-        margin: 30px 0;
+        padding: 30px 0;
 
         .additional-attributes {
             width: auto;
@@ -628,6 +676,24 @@
             .lib-vendor-prefix-order(-1);
         }
     }
+
+
+//
+//  Banner Category Page
+//  _____________________________________________
+        .cate-banner-content{
+            bottom: 0px;
+        left: 15px;
+        }
+        .cate-banner-title{
+            font-size: 30px;
+        line-height: 20px;
+        margin: 10px 0;
+        }
+        .cate-banner-text{
+            font-size: 10px;
+        line-height: 13px;
+        }
 }
 
 //
@@ -716,7 +782,6 @@
 
     .fotorama__stage__frame .fotorama__img{
         width:100%;
-        top: 34%;
     }
 
     //
@@ -1126,53 +1191,3 @@
     }
 }
 
-
-
-//
-//  Banner Category Page
-//  _____________________________________________
-
-& when (@media-common =true) {
-    .main-banner-category{
-        margin-bottom: 20px;
-    }
-    .cate-banner-content {
-        position: absolute;
-        bottom: 40px;
-        left: 40px;
-        .img-banner{
-            justify-content: end;
-            align-items: flex-end;
-        }
-    }
-
-    .cate-banner-title {
-        font-family: @font-sunvalley;
-        font-size  : 72px;
-        line-height: 42px;
-        color      : @color-white;
-    }
-
-    .cate-banner-text {
-        font-size  : 15px;
-        line-height: 22px;
-        color      : @color-white;
-        max-width: 500px;
-    }
-}
-
-@media only screen and (max-width: 767px){
-    .cate-banner-content{
-        bottom: 0px;
-    left: 15px;
-    }
-    .cate-banner-title{
-        font-size: 30px;
-    line-height: 20px;
-    margin: 10px 0;
-    }
-    .cate-banner-text{
-        font-size: 10px;
-    line-height: 13px;
-    }
-}

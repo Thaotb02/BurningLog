@@ -27,7 +27,7 @@
                 <block class="Magento\Framework\View\Element\Template" name="footer-cate" template="Magento_Theme::footer.phtml" />
             </referenceContainer>
 
-            <container name="footer-copyright" as="footer-copyright" label="Page Footer" htmlTag="div" htmlClass="footer bottom">
+            <container name="footer-copyright" as="footer-copyright" label="Page Footer" htmlTag="div" htmlClass="footer bottom row">
                 <block class="Magento\Framework\View\Element\Template" name="footer-bottom" template="Magento_Theme::footer-bottom.phtml" />
             </container>
         </referenceContainer>

@@ -1,0 +1,68 @@
+& when (@media-common = true) {
+    .tabs-infor{
+      margin-top: 25px;
+    }
+    .tab-item{
+        display: flex;
+        border-top: 1px solid #dddddd;
+        padding: 30px 0;
+        justify-content: center;
+      }
+      .tab-content {
+        text-align: center;
+        margin-left: 40px;
+        max-width: 314px;
+      }
+      .tab-content-title {
+        font-size: 20px;
+        line-height: 36px;
+        color: #222222;
+        font-weight: 400;
+        font-family: @font-lora-regular;
+        text-align: center;
+      }
+      .tab-content-text {
+        font-size: 13px;
+        line-height: 20px;
+        color: #333333;
+        font-weight: 400;
+        font-family: @font-roboto-regular;
+        text-align: center;
+      }
+    }
+& when (@media-target ='desktop'),
+(@media-target ='all') {
+    @media all and (min-width: @screen__m) and (max-width: @screen__1275px) {
+        .page-layout-1column .filter-options-item {
+            padding: 10px;
+            margin : 10px 10px 10px 0px;
+        }
+        .page-products .sorter {
+            padding: 0px 10px;
+        }
+        .page-layout-1column .toolbar-products{
+            width: 100%;
+            position  : static;
+            margin-top: 20px;
+        }
+    }
+    @media all and (min-width: @screen__m) and (max-width: @screen__927px) {
+        .page-layout-1column .product-info-main {
+            padding: 24px;
+        }
+    }
+    @media all and (min-width: @screen__1090px) {
+        .product.info.detailed {
+            width: 62%;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .tab-item{
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-content{
+        margin-left: 0;
+      }
+}

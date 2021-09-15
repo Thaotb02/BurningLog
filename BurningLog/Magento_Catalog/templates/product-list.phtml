@@ -5,3 +5,17 @@
         ->setBlockId('you_may_also_like')
         ->toHtml();
     ?>
+<script>
+    require(['jquery', 'jquery/ui', 'slick'], function($) {
+    $(document).ready(function() {
+        $('.widget-product-grid').slick({
+       dots: false,
+       infinite: true,
+       speed: 300,
+       arrows: false,
+       slidesToShow: 4,
+       slidesToScroll: 3
+    });
+    });
+});
+</script>

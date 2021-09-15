@@ -7,7 +7,25 @@
 //  Common
 //  _____________________________________________
 
-& when (@media-common = true) {
+& when (@media-common =true) {
+
+    //  Newsletter icon social
+    .list-icon {
+        margin-top: 30px;
+        ul {
+            .lib-css(display, inline-flex);
+            a {
+                margin-right: 20px;
+                i {
+                    .lib-css(font-size, 18px);
+                    .lib-css(color, @color-icon);
+                    &:hover {
+                        .lib-css(color, @color-black);
+                    }
+                }
+            }
+        }
+    }
 
     //  Newsletter subscription
     .block.newsletter {
@@ -15,13 +33,13 @@
 
         .form.subscribe {
             display: table;
-            width: 100%;
+            width  : 100%;
         }
 
         .fieldset {
-            display: table-cell;
-            margin: 0;
-            padding: 0;
+            display       : table-cell;
+            margin        : 0;
+            padding       : 0;
             vertical-align: top;
         }
 
@@ -29,16 +47,15 @@
             margin: 0;
 
             .control {
-                .lib-icon-font(
-                @icon-envelope,
-                @_icon-font-size: 16px,
-                @_icon-font-line-height: 32px,
-                @_icon-font-color: @form-element-input-placeholder__color,
-                @_icon-font-margin: 0 0 0 8px
-                );
+                .lib-icon-font(@icon-envelope,
+                    @_icon-font-size: 16px,
+                    @_icon-font-line-height: 32px,
+                    @_icon-font-color: @form-element-input-placeholder__color,
+                    @_icon-font-margin: 0 0 0 8px);
 
                 &:before {
                     position: absolute;
+                    display : none;
                 }
 
                 display: block;
@@ -47,29 +64,28 @@
 
         input {
             margin-right: 35px;
-            padding: 0 0 0 35px; // Reset some default Safari padding values.
-            height: 47px;
+            padding     : 0 0 0 35px; // Reset some default Safari padding values.
+            height      : 47px;
+
         }
 
-        .title {
-            display: none;
-        }
+
 
         .label {
             &:extend(.abs-visually-hidden all);
         }
 
         .actions {
-            display: table-cell;
+            display       : table-cell;
             vertical-align: top;
-            width: 1%;
+            width         : 1%;
         }
 
         .action.subscribe {
             border-bottom-left-radius: 0;
-            border-top-left-radius: 0;
-            margin-left: -1px;
-            white-space: nowrap;
+            border-top-left-radius   : 0;
+            margin-left              : -1px;
+            white-space              : nowrap;
         }
     }
 }
@@ -78,10 +94,10 @@
 //  Desktop
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .block.newsletter {
         max-width: 44%;
-        width: max-content;
+        width    : max-content;
     }
 }
 
@@ -89,11 +105,12 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .block {
         &.newsletter {
+            text-align: center;
             input {
-                font-size: 12px;
+                font-size   : 12px;
                 padding-left: 30px;
             }
 

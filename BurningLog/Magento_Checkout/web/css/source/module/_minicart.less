@@ -21,6 +21,12 @@
     //
     //  Minicart
     //  ---------------------------------------------
+    .text {
+        display: contents;
+        color  : @color-cart-icon;
+    }
+
+
 
     .block-minicart {
         .items-total {
@@ -173,31 +179,38 @@
                     @_icon-font-line-height: 14px,
                     @_icon-font-text-hide: true
                 );
+                span{
+                    display: none;
+                }
             }
 
             &.showcart {
                 white-space: nowrap;
                 display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80px;
+                align-items: center;
+                justify-content: space-between;
+                width: 80px;
+                &:before, 
+                &.active:before {
+                        content    : '\f07a';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        margin     : 7px 0;
+                    }
                 .text {
                     &:extend(.abs-visually-hidden all);
                 }
 
                 .counter.qty {
-                    // .lib-css(background, @active__color);
-                    .lib-css(color, @page__background-color);
-                    // .lib-css(height, @minicart-qty__height);
+                    .lib-css(color, @color-backround-qlt-mobile);
                     .lib-css(line-height, @minicart-qty__height);
                     border-radius: 2px;
                     display: inline-block;
-                    // margin: 3px 0 0;
                     min-width: 18px;
                     overflow: hidden;
-                    // padding: 0 3px;
                     text-align: center;
                     white-space: normal;
+
 
                     &.empty {
                         display: block;
@@ -432,6 +445,23 @@
         .update-cart-item {
             float: right;
         }
+        .action.showcart {     
+            width      : 35px;
+            align-items: end;  
+            .counter-number {
+                color: @color-white;
+            }
+             .counter.qty{
+                background-color: @color-backround-qlt-mobile;
+                width           : 20px;
+                height          : 20px;
+                border-radius   : 50%;
+                position        : absolute;
+                right           : 0;
+                line-height     : 20px;
+                top: 0; 
+            }
+        }
     }
 }
 
@@ -452,5 +482,12 @@
         .lib-icon-font-size(
             @_icon-font-size: 16px
         );
+    }
+    .number-cart {
+        color: @color-cart-icon;
+    }
+    .minicart-wrapper .action.showcart:before,
+    .minicart-wrapper .action.showcart.active:before {
+        color: @color-cart-icon;
     }
 }

@@ -1,0 +1,330 @@
+& when (@media-common =true) {
+
+    .row {
+        .lib-css(margin, 0 -10px);
+        .lib-css(display, flex);
+
+        .col {
+            .lib-css(margin, 10px);
+            .lib-css(position, relative);
+        }
+    }
+
+    .img-banner {
+        position       : relative;
+        width          : 100%;
+        display        : flex !important;
+        justify-content: center;
+        align-items    : center;
+
+        img {
+            .lib-css(width, 100%);
+            height    : 100%;
+            object-fit: cover;
+        }
+
+        .title-banner {
+            .lib-css(position, absolute);
+            text-align : center;
+            line-height: 50px;
+
+            a:hover {
+                text-decoration: none;
+            }
+
+            .content-banner {
+                font-size: 42px;
+                .lib-css(font-family, @font-lora-bold);
+                color         : @color-white;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    .img-mobile {
+        display: none;
+    }
+
+    .button-banner {
+        .lib-button(@_button-background: @color-background-button-banner,
+            @_button-background-active: @color-background-button-banner-hover,
+            @_button-font-family: @font-roboto-bold,
+            @_button-color: @color-white,
+            @_button-color-hover: @color-white,
+            @_button-color-active: @color-white,
+            @_button-border: @size-1px solid @color-white,
+            @_button-font-size: @font-size15,
+            @_button-background-hover: @color-background-button-banner-hover,
+        );
+        .lib-css(max-width, 100%);
+
+        &:after {
+            font-size     : 16px;
+            line-height   : 25px;
+            color         : @color-white;
+            content       : '\f054';
+            font-family   : "Font Awesome 5 Free";
+            margin        : 0 0 0 8px;
+            vertical-align: middle;
+            display       : inline-block;
+            overflow      : hidden;
+            font-weight   : 900;
+        }
+    }
+
+    // Style-guide
+    .header-title-guide{
+        background: @background_header_style-guide;
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+        color: @color-white;
+        align-items: center;
+        img{
+            margin-right: 30px;
+        }
+    }
+    .sg-title {
+        .lib-css(font-family, @font-roboto-regular);
+        .lib-css(color, @color-ccc);
+      }
+    
+      .control {
+        .lib-css(margin-top, 0rem);
+        .lib-css(margin-bottom, 1rem);
+      }
+    
+      .unstyled {
+        margin         : 0;
+        padding        : 0;
+        list-style-type: none;
+      }
+
+    .tabset .tab-panel {
+        display: none;
+    }
+
+    .tabset>input:first-child:checked~.tab-panels>.tab-panel:first-child,
+    .tabset>input:nth-child(3):checked~.tab-panels>.tab-panel:nth-child(2),
+    .tabset>input:nth-child(5):checked~.tab-panels>.tab-panel:nth-child(3) {
+        display: block;
+    }
+
+    .data.item.title {
+        label {
+            cursor: pointer;
+
+            &:hover {
+                .lib-css(color, @color-black);
+            }
+        }
+    }
+
+    // Main banner
+    .main-banner {
+        margin-bottom: 10px;
+
+        img {
+            width: 100%;
+        }
+
+        .img-mobile {
+            display: none;
+        }
+
+        .title-main-banner {
+            font-size     : 20rem;
+            margin-bottom : 50px;
+            text-transform: none;
+            line-height   : 90px;
+            font-family   : @font-market;
+            color         : @color-white;
+        }
+
+        .text-main-banner {
+            text-transform: none;
+            .lib-css(font-size, @font-size32);
+            line-height  : 34px;
+            color        : @color-white;
+            font-weight  : 400;
+            font-family  : @font-lora-regular;
+            text-align   : center;
+            filter       : drop-shadow(0 0 7.5px rgba(0, 0, 0, 0.5));
+            margin-bottom: 20px;
+            color        : @color-white;
+        }
+    }
+
+    // List Banner - Video
+    .col-list-banner {
+        height: 364px;
+    }
+
+    // Service
+    .sevice {
+        .row-sevice {
+            padding         : 15px 10px;
+            background-color: @color-2df;
+            margin          : 10px 0;
+
+            .col {
+                width     : 100%/3;
+                text-align: center;
+            }
+
+            .link-service {
+                text-transform: uppercase;
+                color         : @color-white;
+                font-size     : 13px;
+
+                i {
+                    color : @color-white;
+                    margin: 0 10px;
+                }
+
+                &:after {
+                    font-size     : 14px;
+                    line-height   : 15px;
+                    color         : @color-white;
+                    content       : '\f054';
+                    font-family   : "Font Awesome 5 Free";
+                    margin        : 0 0 0 8px;
+                    vertical-align: middle;
+                    display       : inline-block;
+                    overflow      : hidden;
+                    font-weight   : 900;
+                }
+            }
+        }
+    }
+
+    // Collection Banner
+    .collection {
+        .col-collection {
+            text-align      : center;
+            background-color: @color-collection;
+            padding-bottom  : 30px;
+
+            img {
+                width: 100%;
+            }
+
+            a {
+                color: #000;
+            }
+        }
+    }
+
+    .button-collection {
+        .lib-button(@_button-background: @color-collection,
+            @_button-background-active: @color-2df,
+            @_button-font-family: @font-roboto-bold,
+            @_button-color: @color-black,
+            @_button-color-hover: @color-white,
+            @_button-color-active: @color-white,
+            @_button-border: @size-2px solid @color-2df,
+            @_button-font-size: @font-size13,
+            @_button-background-hover: @color-2df,
+        );
+        .lib-css(max-width, 100%);
+        margin-top: 10px;
+        padding   : 7px 15px;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:after {
+            font-size     : 13px;
+            line-height   : 25px;
+            color         : @color-black;
+            content       : '\f054';
+            font-family   : "Font Awesome 5 Free";
+            margin        : 0 0 0 8px;
+            vertical-align: middle;
+            display       : inline-block;
+            overflow      : hidden;
+            font-weight   : 900;
+        }
+    }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+    .row {
+        flex-direction: column;
+    }
+
+    .main-banner {
+        .title-main-banner {
+            font-size    : 42px;
+            margin-bottom: 0;
+            line-height  : 42px;
+        }
+
+    }
+
+    .text-main-banner {
+        font-size: 24px;
+    }
+
+    .main-banner,
+    .footer-banner {
+        .img-desktop {
+            display: none;
+        }
+
+        .img-mobile {
+            display: block;
+        }
+    }
+
+    .title-banner p {
+        font-size: 24px;
+    }
+
+    .button-banner {
+        font-size: 13px;
+    }
+
+    .main-banner .text-main-banner {
+        font-size  : 20px;
+        line-height: 24px;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .list-banner{
+        .col {
+            width: 100%/2;
+        }
+    }
+}
+
+& when (@media-target ='desktop'),
+(@media-target ='all') {
+    @media all and (min-width: @screen__m) and (max-width: @screen__1275px) {
+        .main-banner {
+            .title-main-banner {
+                font-size     : 12rem;
+                margin-bottom : 15px;
+                text-transform: none;
+            }
+            .text-main-banner {
+                font-size  : 24px;
+                line-height: 30px;
+                line-height: 34px;
+            }
+        }
+    }
+}

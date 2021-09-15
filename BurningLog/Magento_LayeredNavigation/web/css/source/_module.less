@@ -393,6 +393,7 @@
     .filter {
         &.block {
             margin-bottom: @indent__xl;
+            max-width: 75%;
         }
 
         &-title {
@@ -428,16 +429,18 @@
         .toolbar-products {
             position: absolute;
             top: 0;
-            width: 100%;
+            width: 25%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            right: 0;
         }
 
         .products ~ .toolbar-products {
             position: static;
             display: flex;
             justify-content: center;
+            width: 100%;
         }
 
         &.page-with-filter .column.main {

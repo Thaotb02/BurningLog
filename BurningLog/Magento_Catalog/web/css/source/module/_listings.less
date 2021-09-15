@@ -61,7 +61,7 @@
                 -webkit-hyphens: auto;
                 display: block;
                 hyphens: auto;
-                margin: @indent__xs 0;
+                // margin: @indent__xs 0;
                 word-wrap: break-word;
             }
 
@@ -134,17 +134,26 @@
             .price-box {
                 margin: @indent__s 0 @indent__m;
 
+                .special-price{
+                    font-size: 20px;
+                    line-height: 18px;
+                    text-decoration: line-through;
+                    color:@color-special-price;
+                    font-weight: 400;
+                    font-family: @font-roboto-regular;
+                }
+
                 .price {
                  
                     white-space: nowrap;
                     font-size: 20px;
                     line-height: 18px;
-                    color: @color-6;
                 }
 
                 .price-label {
                     .lib-css(color, @product-price__muted__color);
                     font-size: @font-size__s;
+                    display: none;
                 }
             }
 
@@ -269,6 +278,38 @@
         .product-image-wrapper {
             &:extend(.abs-reset-image-wrapper all);
         }
+    }
+
+    //  Tabs Sale & PreOrder 
+    .label-attribute{
+        padding: 10px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        text-transform: uppercase;
+        top: 0;
+        font-family: @font-roboto-bold;
+        position: absolute;
+        left: 0;
+        color: @color-white;
+        z-index: 2;
+
+    }
+    .sale-text{
+        background: @color-cart-icon;
+    }
+    .preorder-text{
+        background-color: @background-preorder;
+    }
+    .colour-avaliable{
+        font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    color: @color-333;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: @font-roboto-regular;
+    margin: 0;
     }
 }
 

@@ -82,35 +82,6 @@ require(['jquery', 'jquery/ui', 'slick'], function($) {
          }
        ]
      });
-
-
-
-
     });
 });
 
-
-// up and down quantity 
-
-
-// require(["jquery"], function($){
-//   var minus = document.querySelector("#minus");
-// var plus = document.querySelector("#plus");
-// var input = document.querySelector("#input");
-
-// var quantity = 1;
-
-// input.value = quantity;
-
-// minus.addEventListener('click', function(event){
-//   if (quantity > 1) {
-//       quantity --;
-//     input.value = quantity;
-//   }
-// });
-
-// plus.addEventListener('click', function(event){
-//   quantity ++;
-//   input.value = quantity;
-// });
-// });
