@@ -1,4 +1,3 @@
-
 <div class="footer-desktop-categories">
     <?php
     echo $block->getLayout()
@@ -28,51 +27,53 @@
 
 
 <script>
-require(['jquery','accordion'], function ($)
- {
-    if ($(window).width() < 767) {
-      $(".footer-desktop-why").accordion({
-         "openedState": "active",
-         "collapsible": true,
-         "active": [2],
-         "multipleCollapsible": true,
-         "animate":{
-            timing:"ease-out",
-            duration:"500"
-         }
-      });
+    require(['jquery', 'accordion'], function($) {
+        if ($(window).width() < 767) {
+            $(".footer-desktop-why").accordion({
+                "openedState": "active",
+                "collapsible": true,
+                "active": [2],
+                "multipleCollapsible": true,
+                "animate": {
+                    timing: "ease-out",
+                    duration: "500"
+                }
+            });
 
-      $(".footer-desktop-policies").accordion({
-         "openedState": "active",
-         "collapsible": true,
-         "active": [2],
-         "multipleCollapsible": true,
-         "animate":{
-            timing:"ease-out",
-            duration:"500"
-         }
-      });
+            $(".footer-desktop-policies").accordion({
+                "openedState": "active",
+                "collapsible": true,
+                "active": [2],
+                "multipleCollapsible": true,
+                "animate": {
+                    timing: "ease-out",
+                    duration: "500"
+                }
+            });
 
-      $(".footer-desktop-categories").accordion({
-         "openedState": "active",
-         "collapsible": true,
-         "active": [2],
-         "multipleCollapsible": true,
-         "animate":{
-            timing:"ease-out",
-            duration:"500"
-         }
-      });
+            $(".footer-desktop-categories").accordion({
+                "openedState": "active",
+                "collapsible": true,
+                "active": [2],
+                "multipleCollapsible": true,
+                "animate": {
+                    timing: "ease-out",
+                    duration: "500"
+                }
+            });
 
-    }
+        }
 
- });
+    });
 </script>
 
-<!-- <script>
+<script>
     require([
         'jquery',
         'accordion'], function ($) {
-        $(".footer-content-middle").accordion({"openedState":"active","active":false});
+            $("#element").accordion();
     });
-</script> -->
+</script>
+
+
+
